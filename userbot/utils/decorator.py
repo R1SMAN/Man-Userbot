@@ -111,6 +111,21 @@ def man_cmd(
             MAN2.add_event_handler(
                 func, events.NewMessage(**args, outgoing=True, pattern=man_reg)
             )
+        if MAN2:
+            if allow_sudo:
+                if not disable_edited:
+                    MAN2.add_event_handler(
+                        func,
+                        events.MessageEdited(
+                            **args, from_users=list(SUDO_USERS), pattern=sudo_reg
+                        ),
+                    )
+                MAN2.add_event_handler(
+                    func,
+                    events.NewMessage(
+                        **args, from_users=list(SUDO_USERS), pattern=sudo_reg
+                    ),
+                )
         if MAN3:
             if not disable_edited:
                 MAN3.add_event_handler(
@@ -119,6 +134,21 @@ def man_cmd(
             MAN3.add_event_handler(
                 func, events.NewMessage(**args, outgoing=True, pattern=man_reg)
             )
+        if MAN3:
+            if allow_sudo:
+                if not disable_edited:
+                    MAN3.add_event_handler(
+                        func,
+                        events.MessageEdited(
+                            **args, from_users=list(SUDO_USERS), pattern=sudo_reg
+                        ),
+                    )
+                MAN3.add_event_handler(
+                    func,
+                    events.NewMessage(
+                        **args, from_users=list(SUDO_USERS), pattern=sudo_reg
+                    ),
+                )
         if MAN4:
             if not disable_edited:
                 MAN4.add_event_handler(
@@ -127,6 +157,21 @@ def man_cmd(
             MAN4.add_event_handler(
                 func, events.NewMessage(**args, outgoing=True, pattern=man_reg)
             )
+        if MAN4:
+            if allow_sudo:
+                if not disable_edited:
+                    MAN4.add_event_handler(
+                        func,
+                        events.MessageEdited(
+                            **args, from_users=list(SUDO_USERS), pattern=sudo_reg
+                        ),
+                    )
+                MAN4.add_event_handler(
+                    func,
+                    events.NewMessage(
+                        **args, from_users=list(SUDO_USERS), pattern=sudo_reg
+                    ),
+                )
         if MAN5:
             if not disable_edited:
                 MAN5.add_event_handler(
@@ -135,6 +180,21 @@ def man_cmd(
             MAN5.add_event_handler(
                 func, events.NewMessage(**args, outgoing=True, pattern=man_reg)
             )
+        if MAN5:
+            if allow_sudo:
+                if not disable_edited:
+                    MAN5.add_event_handler(
+                        func,
+                        events.MessageEdited(
+                            **args, from_users=list(SUDO_USERS), pattern=sudo_reg
+                        ),
+                    )
+                MAN5.add_event_handler(
+                    func,
+                    events.NewMessage(
+                        **args, from_users=list(SUDO_USERS), pattern=sudo_reg
+                    ),
+                )
         try:
             LOAD_PLUG[file_test].append(func)
         except Exception:
